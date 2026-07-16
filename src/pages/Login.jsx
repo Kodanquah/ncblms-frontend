@@ -27,18 +27,22 @@ function Login() {
       setError("");
 
       const data = await login(
-        employeeNumber,
-        password
-      );
+  employeeNumber,
+  password
+);
 
-      localStorage.setItem("token", data.token);
+console.log("LOGIN RESPONSE:", data);
 
-      localStorage.setItem(
-        "employee",
-        JSON.stringify(data.employee)
-      );
+localStorage.setItem("token", data.token);
 
-        navigate("/dashboard");
+console.log("TOKEN SAVED:", localStorage.getItem("token"));
+
+localStorage.setItem(
+  "employee",
+  JSON.stringify(data.employee)
+);
+
+navigate("/dashboard");
 
       console.log(data);
 
