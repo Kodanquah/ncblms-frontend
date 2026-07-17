@@ -16,6 +16,7 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -51,13 +52,13 @@ function Sidebar() {
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItemButton>
-
-        <ListItemButton>
-          <ListItemIcon sx={{ color: "white" }}>
-            <PeopleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Employees" />
-        </ListItemButton>
+        
+<ListItemButton component={Link} to="/employees">
+  <ListItemIcon sx={{ color: "white" }}>
+    <PeopleIcon />
+  </ListItemIcon>
+  <ListItemText primary="Employees" />
+</ListItemButton>
 
         <ListItemButton>
           <ListItemIcon sx={{ color: "white" }}>
